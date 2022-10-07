@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.moretech40android.databinding.FragmentSignInBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,9 +19,16 @@ class SignInFragment(): Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = FragmentSignInBinding.inflate(inflater, container, false)
+        binding.singInButton.setOnClickListener {
+            viewModel.toMainFragmentNavigation()
+        }
+
+        viewModel.navEvent.observe(viewLifecycleOwner) { action->
+            this.findNavController().navigate(action)
+        }
 
         return binding.root
     }

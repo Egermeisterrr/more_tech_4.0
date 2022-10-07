@@ -30,5 +30,24 @@
         android:id="@+id/signInFragment"
         android:name="com.example.moretech40android.presentation.fragments.signin.SignInFragment"
         android:label="SignInFragment"
-        tools:layout="@layout/fragment_sign_in"/>
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signInFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/insidesFragment"
+        android:name="com.example.moretech40android.presentation.fragments.insides.InsidesFragment"
+        android:label="fragment_insides"
+        tools:layout="@layout/fragment_insides" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.moretech40android.presentation.fragments.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.moretech40android.presentation.fragments.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

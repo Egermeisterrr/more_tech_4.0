@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/insidesFragment"
+        android:enabled="true"
+        android:icon="@drawable/insides"
+        android:menuCategory="secondary"
+        android:title="" />
+
+    <item
+        android:id="@+id/mainFragment"
+        android:enabled="true"
+        android:icon="@drawable/main"
+        android:menuCategory="secondary"
+        android:title="" />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:enabled="true"
+        android:icon="@drawable/profile"
+        android:menuCategory="secondary"
+        android:title="" />
+
+</menu>
