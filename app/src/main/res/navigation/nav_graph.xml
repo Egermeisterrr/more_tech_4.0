@@ -11,7 +11,19 @@
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
         <action
+            android:id="@+id/action_splashScreenFragment_to_onboardingFragment"
+            app:destination="@id/onboardingFragment" />
+        <action
             android:id="@+id/action_splashScreenFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.example.moretech40android.presentation.fragments.onboarding.OnboardingFragment"
+        android:label="fragment_onboarding"
+        tools:layout="@layout/fragment_onboarding" >
+        <action
+            android:id="@+id/action_onboardingFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
     <fragment
@@ -22,6 +34,9 @@
         <action
             android:id="@+id/action_signInFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -32,4 +47,19 @@
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/insidesFragment"
+        android:name="com.example.moretech40android.presentation.fragments.insides.InsidesFragment"
+        android:label="fragment_insides"
+        tools:layout="@layout/fragment_insides" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.moretech40android.presentation.fragments.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.moretech40android.presentation.fragments.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

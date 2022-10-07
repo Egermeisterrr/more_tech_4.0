@@ -16,4 +16,8 @@ class SignInViewModel @Inject constructor(): ViewModel() {
     fun toSignUpNavigation() {
         _navEvent.postValue(SignInFragmentDirections.actionSignInFragmentToSignUpFragment())
     }
+
+    fun toMainFragmentNavigation() {
+        _navEvent.postValue(SignInFragmentDirections.actionSignInFragmentToMainFragment())
+    }
 }

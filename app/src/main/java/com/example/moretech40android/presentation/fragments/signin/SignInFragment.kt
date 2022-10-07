@@ -19,7 +19,7 @@ class SignInFragment(): Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = FragmentSignInBinding.inflate(inflater, container, false)
         binding.singUpLink.setOnClickListener {
@@ -27,6 +27,9 @@ class SignInFragment(): Fragment() {
         }
         viewModel.navEvent.observe(viewLifecycleOwner) { action ->
             this.findNavController().navigate(action)
+        }
+        binding.singInButton.setOnClickListener {
+            viewModel.toMainFragmentNavigation()
         }
 
         return binding.root
