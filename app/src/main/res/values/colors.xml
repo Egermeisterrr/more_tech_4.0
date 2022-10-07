@@ -14,4 +14,5 @@
     <color name="dark_blue">#002882</color>
     <color name="null_color">#00EDF2F4</color>
     <color name="hint_color_2">#8D99AE</color>
+    <color name="half_white">#F5F5F5</color>
 </resources>
