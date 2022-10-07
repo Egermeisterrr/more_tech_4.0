@@ -13,6 +13,10 @@ class SignInViewModel @Inject constructor(): ViewModel() {
     private val _navEvent = MutableLiveData<NavDirections>()
     val navEvent: LiveData<NavDirections> = _navEvent
 
+    fun toSignUpNavigation() {
+        _navEvent.postValue(SignInFragmentDirections.actionSignInFragmentToSignUpFragment())
+    }
+
     fun toMainFragmentNavigation() {
         _navEvent.postValue(SignInFragmentDirections.actionSignInFragmentToMainFragment())
     }

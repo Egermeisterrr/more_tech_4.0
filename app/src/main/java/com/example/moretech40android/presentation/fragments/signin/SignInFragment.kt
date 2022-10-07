@@ -22,12 +22,14 @@ class SignInFragment(): Fragment() {
     ): View {
 
         binding = FragmentSignInBinding.inflate(inflater, container, false)
+        binding.singUpLink.setOnClickListener {
+            viewModel.toSignUpNavigation()
+        }
+        viewModel.navEvent.observe(viewLifecycleOwner) { action ->
+            this.findNavController().navigate(action)
+        }
         binding.singInButton.setOnClickListener {
             viewModel.toMainFragmentNavigation()
-        }
-
-        viewModel.navEvent.observe(viewLifecycleOwner) { action->
-            this.findNavController().navigate(action)
         }
 
         return binding.root
