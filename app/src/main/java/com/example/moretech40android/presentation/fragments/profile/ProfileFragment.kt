@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.moretech40android.databinding.FragmentProfileBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,6 +22,15 @@ class ProfileFragment : Fragment() {
     ): View {
 
         binding = FragmentProfileBinding.inflate(inflater, container, false)
+        binding.editIcon1.setOnClickListener {
+            viewModel.toEditEmailNavigation()
+        }
+        binding.editIcon2.setOnClickListener {
+            viewModel.toEditUsernameNavigation()
+        }
+        viewModel.navEvent.observe(viewLifecycleOwner) { action ->
+            findNavController().navigate(action)
+        }
 
         return binding.root
     }
