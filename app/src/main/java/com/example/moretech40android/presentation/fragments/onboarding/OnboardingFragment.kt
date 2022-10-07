@@ -1,17 +1,17 @@
-package com.example.moretech40android.presentation.fragments.splashscreen
+package com.example.moretech40android.presentation.fragments.onboarding
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.moretech40android.databinding.FragmentSplashScreenBinding
+import com.example.moretech40android.databinding.FragmentOnboardingBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SplashScreenFragment : Fragment() {
+class OnboardingFragment : Fragment() {
 
-    private lateinit var binding: FragmentSplashScreenBinding
+    private lateinit var binding: FragmentOnboardingBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,7 +19,7 @@ class SplashScreenFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        binding = FragmentSplashScreenBinding.inflate(inflater)
+        binding = FragmentOnboardingBinding.inflate(inflater, container, false)
 
         return binding.root
     }
