@@ -15,6 +15,8 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.domain.model.NewsModel
 import com.example.moretech40android.databinding.FragmentSelectedNewsBinding
 import com.example.moretech40android.presentation.fragments.main.MainFragment
+import com.example.moretech40android.presentation.fragments.main.MainFragment.Companion.CURRENT_FRAGMENT
+import com.example.moretech40android.presentation.fragments.main.MainFragment.Companion.MAIN_FRAGMENT
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -52,7 +54,11 @@ class SelectedNewsFragment : Fragment() {
             this.findNavController().navigate(action)
         }
         binding.backToMain.setOnClickListener {
-            viewModel.toMainNavigation()
+            if(arguments?.getString(CURRENT_FRAGMENT).equals(MAIN_FRAGMENT)) {
+                viewModel.toMainNavigation()
+            } else {
+                viewModel.toInsightsNavigation()
+            }
         }
 
         return binding.root

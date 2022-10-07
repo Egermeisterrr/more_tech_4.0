@@ -57,10 +57,10 @@
             app:destination="@id/mainFragment" />
     </fragment>
     <fragment
-        android:id="@+id/insidesFragment"
-        android:name="com.example.moretech40android.presentation.fragments.insides.InsidesFragment"
+        android:id="@+id/insightsFragment"
+        android:name="com.example.moretech40android.presentation.fragments.insides.InsightsFragment"
         android:label="fragment_insides"
-        tools:layout="@layout/fragment_insides" />
+        tools:layout="@layout/fragment_insights" />
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.moretech40android.presentation.fragments.main.MainFragment"
@@ -90,6 +90,9 @@
         <action
             android:id="@+id/action_selectedNewsFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_selectedNewsFragment_to_insightsFragment"
+            app:destination="@id/insightsFragment" />
     </fragment>
     <fragment
         android:id="@+id/editEmailFragment"
