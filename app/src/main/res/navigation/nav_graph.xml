@@ -44,10 +44,23 @@
         android:id="@+id/mainFragment"
         android:name="com.example.moretech40android.presentation.fragments.main.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_selectedNewsFragment"
+            app:destination="@id/selectedNewsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.moretech40android.presentation.fragments.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/selectedNewsFragment"
+        android:name="com.example.moretech40android.presentation.fragments.selected_news.SelectedNewsFragment"
+        android:label="fragment_selected_news"
+        tools:layout="@layout/fragment_selected_news" >
+        <action
+            android:id="@+id/action_selectedNewsFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 </navigation>

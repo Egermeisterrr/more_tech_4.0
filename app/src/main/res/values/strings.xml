@@ -11,4 +11,6 @@
     <string name="header">ВТБ Новости</string>
     <string name="digest">Дайджест</string>
     <string name="trend">Тренд</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
