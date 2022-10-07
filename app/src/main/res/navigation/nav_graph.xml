@@ -18,6 +18,9 @@
             app:destination="@id/signInFragment"
             app:popUpTo="@id/signInFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/onboardingFragment"
@@ -49,6 +52,9 @@
         <action
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/insidesFragment"
@@ -68,7 +74,14 @@
         android:id="@+id/profileFragment"
         android:name="com.example.moretech40android.presentation.fragments.profile.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_editUsernameFragment"
+            app:destination="@id/editUsernameFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_editEmailFragment"
+            app:destination="@id/editEmailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/selectedNewsFragment"
         android:name="com.example.moretech40android.presentation.fragments.selected_news.SelectedNewsFragment"
@@ -77,14 +90,6 @@
         <action
             android:id="@+id/action_selectedNewsFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
-    </fragment>
-        tools:layout="@layout/fragment_profile" >
-        <action
-            android:id="@+id/action_profileFragment_to_editUsernameFragment"
-            app:destination="@id/editUsernameFragment" />
-        <action
-            android:id="@+id/action_profileFragment_to_editEmailFragment"
-            app:destination="@id/editEmailFragment" />
     </fragment>
     <fragment
         android:id="@+id/editEmailFragment"
