@@ -21,6 +21,10 @@ class SelectedNewsViewModel @Inject constructor(): ViewModel() {
         _navEvent.postValue(SelectedNewsFragmentDirections.actionSelectedNewsFragmentToMainFragment())
     }
 
+    fun toInsightsNavigation() {
+        _navEvent.postValue(SelectedNewsFragmentDirections.actionSelectedNewsFragmentToInsightsFragment())
+    }
+
     fun setNews(news: NewsModel) {
         _currentNews.value = news
     }

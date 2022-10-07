@@ -15,7 +15,7 @@ import com.example.moretech40android.databinding.DigestItemBinding
 import dagger.hilt.android.qualifiers.ApplicationContext
 
 class DigestAdapter(@ApplicationContext private val context: Context) :
-    ListAdapter<NewsModel, DigestViewHolder>(SpecNewsDiffUtil) {
+    ListAdapter<NewsModel, DigestViewHolder>(DigestDiffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DigestViewHolder {
         val binding =
@@ -35,7 +35,7 @@ class DigestAdapter(@ApplicationContext private val context: Context) :
         }
     }
 
-    object SpecNewsDiffUtil : DiffUtil.ItemCallback<NewsModel>() {
+    object DigestDiffUtil : DiffUtil.ItemCallback<NewsModel>() {
         override fun areItemsTheSame(
             oldItem: NewsModel,
             newItem: NewsModel

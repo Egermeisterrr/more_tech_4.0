@@ -21,4 +21,5 @@
     <string name="edit_email">Редактировать Email</string>
     <string name="edit_name">Редактировать Имя</string>
     <string name="profile">Профиль</string>
+    <string name="insights">Инсайты</string>
 </resources>

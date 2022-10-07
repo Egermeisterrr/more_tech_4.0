@@ -1,4 +1,4 @@
-package com.example.moretech40android.presentation.fragments.main.trends
+package com.example.moretech40android.presentation.fragments.insides
 
 import android.content.Context
 import android.net.Uri
@@ -12,20 +12,19 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.domain.model.NewsModel
 import com.example.moretech40android.databinding.TrendItemBinding
-import com.example.moretech40android.presentation.fragments.main.MainViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 
-class TrendsAdapter(
+class InsightsAdapter(
     @ApplicationContext private val context: Context,
-    private val viewModel: MainViewModel
-) : ListAdapter<NewsModel, TrendsViewHolder>(TrendsDiffUtil) {
+    private val viewModel: InsightsViewModel
+) : ListAdapter<NewsModel, InsightsViewHolder>(InsightsDiffUtil) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrendsViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InsightsViewHolder {
         val binding = TrendItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return TrendsViewHolder(binding)
+        return InsightsViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: TrendsViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: InsightsViewHolder, position: Int) {
         with(holder) {
             with(getItem(position)) {
                 binding.newsTitle.text = title
@@ -40,7 +39,7 @@ class TrendsAdapter(
         }
     }
 
-    object TrendsDiffUtil : DiffUtil.ItemCallback<NewsModel>() {
+    object InsightsDiffUtil : DiffUtil.ItemCallback<NewsModel>() {
         override fun areItemsTheSame(
             oldItem: NewsModel,
             newItem: NewsModel
