@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.moretech40android.databinding.FragmentSplashScreenBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -19,6 +20,8 @@ class SplashScreenFragment : Fragment() {
     ): View? {
 
         binding = FragmentSplashScreenBinding.inflate(inflater)
+
+        findNavController().navigate(SplashScreenFragmentDirections.actionSplashScreenFragmentToSignInFragment())
 
         return binding.root
     }
