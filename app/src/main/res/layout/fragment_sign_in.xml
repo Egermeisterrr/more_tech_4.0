@@ -63,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bottom_border_edit_text"
-            android:drawableStart="@drawable/password_image_white"
+            android:drawableStart="@drawable/password_white"
             android:hint="@string/password_hint"
             android:inputType="textPassword"
             android:paddingTop="10dp"
