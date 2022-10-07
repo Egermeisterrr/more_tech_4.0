@@ -46,4 +46,11 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
+    <style name="bottom_navigation_style">
+        <item name="android:background">@color/dark_blue</item>
+        <item name="itemIconTint">@drawable/bottom_navigation_selected</item>
+        <item name="itemTextColor">@drawable/bottom_navigation_selected</item>
+    </style>
+
+
 </resources>
