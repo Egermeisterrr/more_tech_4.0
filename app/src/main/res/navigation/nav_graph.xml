@@ -18,6 +18,9 @@
             app:destination="@id/signInFragment"
             app:popUpTo="@id/signInFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/onboardingFragment"
@@ -49,6 +52,9 @@
         <action
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/insidesFragment"
@@ -59,7 +65,11 @@
         android:id="@+id/mainFragment"
         android:name="com.example.moretech40android.presentation.fragments.main.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_selectedNewsFragment"
+            app:destination="@id/selectedNewsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.moretech40android.presentation.fragments.profile.ProfileFragment"
@@ -71,6 +81,15 @@
         <action
             android:id="@+id/action_profileFragment_to_editEmailFragment"
             app:destination="@id/editEmailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectedNewsFragment"
+        android:name="com.example.moretech40android.presentation.fragments.selected_news.SelectedNewsFragment"
+        android:label="fragment_selected_news"
+        tools:layout="@layout/fragment_selected_news" >
+        <action
+            android:id="@+id/action_selectedNewsFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/editEmailFragment"

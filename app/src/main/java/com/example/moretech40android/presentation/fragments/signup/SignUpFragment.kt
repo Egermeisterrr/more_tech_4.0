@@ -61,6 +61,9 @@ class SignUpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
+        binding.registerButton.setOnClickListener {
+            viewModel.toMainFragmentNavigation()
+        }
         binding.userPhoto.setOnClickListener {
             chooseImage()
         }
@@ -124,7 +127,6 @@ class SignUpFragment : Fragment() {
         return binding.root
     }
 
-
     private fun checkEmailAndPassword() {
         binding.signUpPassword.addTextChangedListener {
             if ((binding.confirmSignUpPassword.text.toString() != binding.signUpPassword.text.toString()) && binding.confirmSignUpPassword.text.toString()
@@ -164,7 +166,6 @@ class SignUpFragment : Fragment() {
         listPopupWindowButton.setOnClickListener { v: View? -> listPopupWindow.show() }
     }
 
-
     private fun chooseImage() {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
         intent.type = "image/*"
@@ -184,6 +185,5 @@ class SignUpFragment : Fragment() {
             "Бухгалтер",
             "Другое"
         )
-
     }
 }

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_recycler_view_vertical">10dp</dimen>
+    <dimen name="margin_recycler_view_horizontal">2dp</dimen>
+    <dimen name="margin_recycler_view_no_margin">0dp</dimen>
+</resources>
