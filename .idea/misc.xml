@@ -3,11 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/USER/AndroidStudioProjects/more.tech.4.0.android/app/src/main/res/drawable/arrow_back_white.xml" value="0.205" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/more.tech.4.0.android/app/src/main/res/drawable/background.xml" value="0.205" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/more.tech.4.0.android/app/src/main/res/drawable/bottom_border_edit_text.xml" value="0.205" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/more.tech.4.0.android/app/src/main/res/drawable/ellipce_white.xml" value="0.205" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/more.tech.4.0.android/app/src/main/res/drawable/mail_white.xml" value="0.205" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/more.tech.4.0.android/app/src/main/res/drawable/password_image_white.xml" value="0.205" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/more.tech.4.0.android/app/src/main/res/drawable/profile_photo.xml" value="0.205" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/more.tech.4.0.android/app/src/main/res/drawable/user_image_white.xml" value="0.205" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/more.tech.4.0.android/app/src/main/res/layout/fragment_sign_in.xml" value="0.33" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/more.tech.4.0.android/app/src/main/res/layout/fragment_sign_up.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/more.tech.4.0.android/app/src/main/res/layout/fragment_splash_screen.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/more.tech.4.0.android/app/src/main/res/layout/list_popup_window_item.xml" value="0.358695652173913" />
       </map>
     </option>
   </component>
