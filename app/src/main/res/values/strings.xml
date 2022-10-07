@@ -3,4 +3,9 @@
     <string name="vtb_name">ВТБ</string>
     <string name="news_name">NEWS</string>
     <string name="next">Далее</string>
+    <string name="username_hint">Имя пользователя</string>
+    <string name="password_hint">Пароль</string>
+    <string name="sing_in_button_text">Войти</string>
+    <string name="dont_have_an_account">Нет аккаунта?</string>
+    <string name="register">Зарегистрироваться</string>
 </resources>

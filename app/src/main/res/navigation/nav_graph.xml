@@ -19,4 +19,13 @@
         android:name="com.example.moretech40android.presentation.fragments.onboarding.OnboardingFragment"
         android:label="fragment_onboarding"
         tools:layout="@layout/fragment_onboarding" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.moretech40android.presentation.fragments.signin.SignInFragment"
+        android:label="SignInFragment"
+        tools:layout="@layout/fragment_sign_in"/>
 </navigation>
