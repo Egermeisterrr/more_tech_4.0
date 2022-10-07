@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             findViewById<BottomNavigationView>(R.id.bottom_navigation)
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.insidesFragment,
+                R.id.insightsFragment,
                 R.id.mainFragment,
                 R.id.profileFragment
             )

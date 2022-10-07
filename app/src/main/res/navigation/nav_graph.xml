@@ -60,15 +60,19 @@
             app:destination="@id/mainFragment" />
     </fragment>
     <fragment
-        android:id="@+id/insidesFragment"
-        android:name="com.example.moretech40android.presentation.fragments.insides.InsidesFragment"
+        android:id="@+id/insightsFragment"
+        android:name="com.example.moretech40android.presentation.fragments.insides.InsightsFragment"
         android:label="fragment_insides"
-        tools:layout="@layout/fragment_insides" />
+        tools:layout="@layout/fragment_insights" />
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.moretech40android.presentation.fragments.main.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_selectedNewsFragment"
+            app:destination="@id/selectedNewsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.moretech40android.presentation.fragments.profile.ProfileFragment"
@@ -83,6 +87,18 @@
         <action
             android:id="@+id/action_profileFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectedNewsFragment"
+        android:name="com.example.moretech40android.presentation.fragments.selected_news.SelectedNewsFragment"
+        android:label="fragment_selected_news"
+        tools:layout="@layout/fragment_selected_news" >
+        <action
+            android:id="@+id/action_selectedNewsFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_selectedNewsFragment_to_insightsFragment"
+            app:destination="@id/insightsFragment" />
     </fragment>
     <fragment
         android:id="@+id/editEmailFragment"
