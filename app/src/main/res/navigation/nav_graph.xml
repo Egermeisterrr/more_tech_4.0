@@ -18,6 +18,9 @@
             app:destination="@id/signInFragment"
             app:popUpTo="@id/signInFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/onboardingFragment"
@@ -40,6 +43,9 @@
         <action
             android:id="@+id/action_signInFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_mainFragment2"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -49,6 +55,9 @@
         <action
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/insidesFragment"
@@ -71,6 +80,9 @@
         <action
             android:id="@+id/action_profileFragment_to_editEmailFragment"
             app:destination="@id/editEmailFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
     </fragment>
     <fragment
         android:id="@+id/editEmailFragment"

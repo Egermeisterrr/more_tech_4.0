@@ -27,6 +27,7 @@ class MainFragment : Fragment() {
         val mainActivityViewModel: MainActivityViewModel =
             ViewModelProvider(requireActivity())[MainActivityViewModel::class.java]
         mainActivityViewModel.showActionBar()
+        viewModel.updateToken()
 
         return binding.root
     }

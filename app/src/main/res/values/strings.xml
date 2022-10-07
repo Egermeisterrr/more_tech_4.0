@@ -18,4 +18,8 @@
     <string name="edit_email">Редактировать Email</string>
     <string name="edit_name">Редактировать Имя</string>
     <string name="profile">Профиль</string>
+    <string name="confirmation">Подтверждение</string>
+    <string name="question">Вы уверены что хотите выйти?</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
 </resources>
