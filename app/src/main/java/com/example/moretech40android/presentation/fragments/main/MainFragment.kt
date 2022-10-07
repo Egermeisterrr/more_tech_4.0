@@ -38,6 +38,7 @@ class MainFragment : Fragment() {
         val mainActivityViewModel: MainActivityViewModel =
             ViewModelProvider(requireActivity())[MainActivityViewModel::class.java]
         mainActivityViewModel.showActionBar()
+        viewModel.updateToken()
 
         viewModel.selectedNews.observe(viewLifecycleOwner) {
             val bundle = Bundle()

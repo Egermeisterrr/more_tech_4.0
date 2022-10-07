@@ -87,11 +87,20 @@ class SignUpFragment : Fragment() {
             ) {
                 Snackbar.make(binding.root, "Введите все данные", Snackbar.LENGTH_LONG).show()
             } else {
-
+                viewModel.registration(
+                    binding.email.text.toString(),
+                    binding.signUpPassword.text.toString()
+                )
             }
         }
         viewModel.navEvent.observe(viewLifecycleOwner) { action ->
             this.findNavController().navigate(action)
+        }
+        viewModel.errorMessage.observe(viewLifecycleOwner) { error ->
+            Snackbar.make(binding.root, error, Snackbar.LENGTH_LONG).show()
+        }
+        viewModel.registrationSuccessful.observe(viewLifecycleOwner) {
+            viewModel.toMainFragmentNavigation()
         }
         binding.differentJobPosition.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(
