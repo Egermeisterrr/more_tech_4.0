@@ -18,11 +18,13 @@ class SplashScreenViewModel @Inject constructor(
     private val _navEvent = MutableLiveData<NavDirections>()
     val navEvent: LiveData<NavDirections> = _navEvent
 
-    fun toSignInNavigation() {
-
+    private fun toSignInNavigation() {
+        _navEvent.postValue(
+            SplashScreenFragmentDirections.actionSplashScreenFragmentToSignInFragment()
+        )
     }
 
-    fun toOnboardingNavigation() {
+    private fun toOnboardingNavigation() {
         _navEvent.postValue(
             SplashScreenFragmentDirections.actionSplashScreenFragmentToOnboardingFragment()
         )
