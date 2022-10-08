@@ -1,6 +1,8 @@
 package com.example.moretech40android.presentation.fragments.main
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.DisplayMetrics
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -27,6 +29,8 @@ class MainFragment : Fragment() {
     private lateinit var binding: FragmentMainBinding
     private lateinit var trendsAdapter: TrendsAdapter
     private lateinit var digestAdapter: DigestAdapter
+    private lateinit var mHandler: Handler
+    private lateinit var mRunnable: Runnable
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -134,6 +138,14 @@ class MainFragment : Fragment() {
                 )
             )
         )
+        mHandler = Handler(Looper.getMainLooper())
+        binding.swipeContainer.setOnRefreshListener {
+            //place for update function
+            mRunnable = Runnable {
+                binding.swipeContainer.isRefreshing = false
+            }
+            mHandler.postDelayed(mRunnable, 1000)
+        }
 
         return binding.root
     }

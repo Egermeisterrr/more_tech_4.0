@@ -1,6 +1,8 @@
 package com.example.moretech40android.presentation.fragments.insides
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.DisplayMetrics
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,6 +23,8 @@ class InsightsFragment : Fragment() {
     private val viewModel: InsightsViewModel by viewModels()
     private lateinit var binding: FragmentInsightsBinding
     private lateinit var insightsAdapter: InsightsAdapter
+    private lateinit var mHandler: Handler
+    private lateinit var mRunnable: Runnable
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -80,6 +84,14 @@ class InsightsFragment : Fragment() {
                 )
             )
         )
+        mHandler = Handler(Looper.getMainLooper())
+        binding.swipeContainer.setOnRefreshListener {
+            //place for update function
+            mRunnable = Runnable {
+                binding.swipeContainer.isRefreshing = false
+            }
+            mHandler.postDelayed(mRunnable, 1000)
+        }
 
         return binding.root
     }
