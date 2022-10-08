@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/USER/AndroidStudioProjects/more.tech.4.0.android/app/src/main/res/layout/digest_item.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/more.tech.4.0.android/app/src/main/res/layout/insights_item.xml" value="0.14709569577935647" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/more.tech.4.0.android/app/src/main/res/layout/list_popup_window_item.xml" value="0.3009833262077811" />
         <entry key="app/src/main/res/drawable/arrow_back.xml" value="0.169" />
         <entry key="app/src/main/res/drawable/arrow_forward.xml" value="0.1525" />
         <entry key="app/src/main/res/drawable/background.xml" value="0.169" />
