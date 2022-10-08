@@ -7,6 +7,9 @@ import com.example.domain.repository.SplashScreenRepository
 import com.example.domain.usecase.accesstoken.DeleteAccessTokenUseCase
 import com.example.domain.usecase.accesstoken.GetAccessTokenUseCase
 import com.example.domain.usecase.accesstoken.SaveAccessTokenUseCase
+import com.example.domain.usecase.data.GetDigestUseCase
+import com.example.domain.usecase.data.GetInsightsUseCase
+import com.example.domain.usecase.data.GetTrendsUseCase
 import com.example.domain.usecase.refreshtoken.DecryptRefreshTokenUseCase
 import com.example.domain.usecase.refreshtoken.DeleteRefreshTokenUseCase
 import com.example.domain.usecase.refreshtoken.EncryptRefreshTokenUseCase
@@ -48,6 +51,18 @@ class DomainModule {
     @Provides
     fun provideRegistrationUseCase(newsApiRepository: NewsApiRepository): RegistrationUseCase =
         RegistrationUseCase(newsApiRepository = newsApiRepository)
+
+    @Provides
+    fun provideGetDigestUseCase(newsApiRepository: NewsApiRepository): GetDigestUseCase =
+        GetDigestUseCase(newsApiRepository = newsApiRepository)
+
+    @Provides
+    fun provideGetTrendsUseCase(newsApiRepository: NewsApiRepository): GetTrendsUseCase =
+        GetTrendsUseCase(newsApiRepository = newsApiRepository)
+
+    @Provides
+    fun provideGetInsightsUseCase(newsApiRepository: NewsApiRepository): GetInsightsUseCase =
+        GetInsightsUseCase(newsApiRepository = newsApiRepository)
 
     @Provides
     fun provideGetAccessTokenUseCase(accessTokenRepository: AccessTokenRepository): GetAccessTokenUseCase =

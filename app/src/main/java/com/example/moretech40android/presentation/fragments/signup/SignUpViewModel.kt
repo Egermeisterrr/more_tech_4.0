@@ -43,11 +43,11 @@ class SignUpViewModel @Inject constructor(
         _navEvent.postValue(SignUpFragmentDirections.actionSignUpFragmentToMainFragment())
     }
 
-    fun registration(username: String, password: String) {
+    fun registration(username: String, password: String, sphere: String) {
         viewModelScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
             encryptRefreshTokenUseCase.execute(
                 async {
-                    registrationUseCase.execute(ProfileModel(username, password)).refresh_token
+                    registrationUseCase.execute(ProfileModel(username, password, sphere)).refresh_token
                 }.await()
             )
             _registrationSuccessful.postValue(true)

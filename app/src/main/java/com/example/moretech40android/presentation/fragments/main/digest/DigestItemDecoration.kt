@@ -1,4 +1,4 @@
-package com.example.moretech40android.presentation.fragments.main.trends
+package com.example.moretech40android.presentation.fragments.main.digest
 
 import android.graphics.Rect
 import android.view.View

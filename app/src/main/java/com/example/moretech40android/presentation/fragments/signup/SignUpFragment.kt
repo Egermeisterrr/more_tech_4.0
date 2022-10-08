@@ -89,7 +89,8 @@ class SignUpFragment : Fragment() {
             } else {
                 viewModel.registration(
                     binding.email.text.toString(),
-                    binding.signUpPassword.text.toString()
+                    binding.signUpPassword.text.toString(),
+                    binding.field.text.toString()
                 )
             }
         }

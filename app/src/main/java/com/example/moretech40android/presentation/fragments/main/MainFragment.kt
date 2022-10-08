@@ -15,9 +15,9 @@ import com.example.domain.model.NewsModel
 import com.example.moretech40android.R
 import com.example.moretech40android.databinding.FragmentMainBinding
 import com.example.moretech40android.presentation.activity.MainActivityViewModel
-import com.example.moretech40android.presentation.fragments.main.digest.TrendsAdapter
-import com.example.moretech40android.presentation.fragments.main.trends.DigestAdapter
-import com.example.moretech40android.presentation.fragments.main.trends.DigestItemDecoration
+import com.example.moretech40android.presentation.fragments.main.trends.TrendsAdapter
+import com.example.moretech40android.presentation.fragments.main.digest.DigestAdapter
+import com.example.moretech40android.presentation.fragments.main.digest.DigestItemDecoration
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -79,7 +79,7 @@ class MainFragment : Fragment() {
         )
         binding.trendsRecyclerView.adapter = digestAdapter
         binding.trendsRecyclerView.addItemDecoration(
-            com.example.moretech40android.presentation.fragments.main.trends.DigestItemDecoration(
+            DigestItemDecoration(
                 dpToPixel(
                     requireActivity().resources.getDimension(
                         R.dimen.margin_recycler_view_vertical

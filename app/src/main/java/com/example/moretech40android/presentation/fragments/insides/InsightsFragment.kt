@@ -13,7 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.domain.model.NewsModel
 import com.example.moretech40android.R
 import com.example.moretech40android.databinding.FragmentInsightsBinding
-import com.example.moretech40android.presentation.fragments.main.trends.DigestItemDecoration
+import com.example.moretech40android.presentation.fragments.main.digest.DigestItemDecoration
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.ArrayList
 

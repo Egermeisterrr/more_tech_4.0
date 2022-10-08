@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavDirections
+import com.example.domain.models.ProfileLoginModel
 import com.example.domain.models.ProfileModel
 import com.example.domain.usecase.accesstoken.SaveAccessTokenUseCase
 import com.example.domain.usecase.refreshtoken.EncryptRefreshTokenUseCase
@@ -48,12 +49,12 @@ class SignInViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
             saveAccessTokenUseCase.execute(
                 async {
-                    userLoginUseCase.execute(ProfileModel(username, password)).access_token
+                    userLoginUseCase.execute(ProfileLoginModel(username, password)).access_token
                 }.await()
             )
             encryptRefreshTokenUseCase.execute(
                 async {
-                    userLoginUseCase.execute(ProfileModel(username, password)).refresh_token
+                    userLoginUseCase.execute(ProfileLoginModel(username, password)).refresh_token
                 }.await()
             )
             _loginSuccessful.postValue(true)
