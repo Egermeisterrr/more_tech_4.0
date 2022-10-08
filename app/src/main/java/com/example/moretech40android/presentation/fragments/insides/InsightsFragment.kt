@@ -13,7 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.domain.model.NewsModel
 import com.example.moretech40android.R
 import com.example.moretech40android.databinding.FragmentInsightsBinding
-import com.example.moretech40android.presentation.fragments.main.trends.TrendsItemDecoration
+import com.example.moretech40android.presentation.fragments.main.trends.DigestItemDecoration
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.ArrayList
 
@@ -71,7 +71,7 @@ class InsightsFragment : Fragment() {
         )
         binding.insightsRecyclerView.adapter = insightsAdapter
         binding.insightsRecyclerView.addItemDecoration(
-            TrendsItemDecoration(
+            DigestItemDecoration(
                 dpToPixel(
                     requireActivity().resources.getDimension(
                         R.dimen.margin_recycler_view_vertical

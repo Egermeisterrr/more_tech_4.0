@@ -11,6 +11,7 @@ import com.bumptech.glide.load.MultiTransformation
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.domain.model.NewsModel
+import com.example.moretech40android.databinding.DigestItemBinding
 import com.example.moretech40android.databinding.TrendItemBinding
 import dagger.hilt.android.qualifiers.ApplicationContext
 
@@ -20,7 +21,7 @@ class InsightsAdapter(
 ) : ListAdapter<NewsModel, InsightsViewHolder>(InsightsDiffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InsightsViewHolder {
-        val binding = TrendItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = DigestItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return InsightsViewHolder(binding)
     }
 

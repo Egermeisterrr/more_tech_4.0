@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.DisplayMetrics
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -15,20 +15,18 @@ import com.example.domain.model.NewsModel
 import com.example.moretech40android.R
 import com.example.moretech40android.databinding.FragmentMainBinding
 import com.example.moretech40android.presentation.activity.MainActivityViewModel
-import com.example.moretech40android.presentation.fragments.main.digest.DigestAdapter
-import com.example.moretech40android.presentation.fragments.main.digest.DigestItemDecoration
-import com.example.moretech40android.presentation.fragments.main.trends.TrendsAdapter
-import com.example.moretech40android.presentation.fragments.main.trends.TrendsItemDecoration
+import com.example.moretech40android.presentation.fragments.main.digest.TrendsAdapter
+import com.example.moretech40android.presentation.fragments.main.trends.DigestAdapter
+import com.example.moretech40android.presentation.fragments.main.trends.DigestItemDecoration
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.ArrayList
 
 @AndroidEntryPoint
 class MainFragment : Fragment() {
 
     private val viewModel: MainViewModel by viewModels()
     private lateinit var binding: FragmentMainBinding
-    private lateinit var trendsAdapter: TrendsAdapter
     private lateinit var digestAdapter: DigestAdapter
+    private lateinit var trendsAdapter: TrendsAdapter
     private lateinit var mHandler: Handler
     private lateinit var mRunnable: Runnable
 
@@ -50,51 +48,7 @@ class MainFragment : Fragment() {
             findNavController().navigate(R.id.selectedNewsFragment, bundle)
         }
 
-        trendsAdapter = TrendsAdapter(requireContext(), viewModel)
-        trendsAdapter.submitList(
-            mutableListOf(
-                NewsModel(
-                    "title title title title title title title title title ",
-                    "Sdas",
-                    mutableListOf("1231", "12314", "123124"),
-                    "asdaasdasdas",
-                    "Решение о переносе начала осеннего призыва на военную службу с 1 октября на 1 ноября связано с загрузкой военкоматов, рассказал «РИА Новости» пресс-секретарь президента Дмитрий Песков. Ранее президент Владимир Путин подписал указ об осеннем призыве.\n" +
-                            "\n" +
-                            "«Сейчас военкоматы сильно перегружены в связи с частичной мобилизацией. Чтобы не усугублять эту перегрузку, было принято такое решение. Оно позволит развести потоки мобилизованных и призывников срочников», — сообщил Песков.\n" +
-                            "\n" +
-                            "Указ об осеннем призыве граждан России на военную службу был опубликован в пятницу.\n" +
-                            "Заместитель начальника Главного..."
-                ),
-                NewsModel(
-                    "title1 title1 title1 title1 title1 title1 title1 title1 title1 ",
-                    "Sdas",
-                    mutableListOf("asad", "sadasda", "asdaas"),
-                    "1231412111",
-                    "Решение о переносе начала осеннего призыва на военную службу с 1 октября на 1 ноября связано с загрузкой военкоматов, рассказал «РИА Новости» пресс-секретарь президента Дмитрий Песков. Ранее президент Владимир Путин подписал указ об осеннем призыве.\n" +
-                            "\n" +
-                            "«Сейчас военкоматы сильно перегружены в связи с частичной мобилизацией. Чтобы не усугублять эту перегрузку, было принято такое решение. Оно позволит развести потоки мобилизованных и призывников срочников», — сообщил Песков.\n" +
-                            "\n" +
-                            "Указ об осеннем призыве граждан России на военную службу был опубликован в пятницу.\n" +
-                            "Заместитель начальника Главного..."
-                )
-            )
-        )
-        binding.trendsRecyclerView.adapter = trendsAdapter
-        binding.trendsRecyclerView.addItemDecoration(
-            TrendsItemDecoration(
-                dpToPixel(
-                    requireActivity().resources.getDimension(
-                        R.dimen.margin_recycler_view_vertical
-                    )
-                ),
-                dpToPixel(
-                    requireActivity().resources.getDimension(
-                        R.dimen.margin_recycler_view_no_margin
-                    )
-                )
-            )
-        )
-        digestAdapter = DigestAdapter(requireContext())
+        digestAdapter = DigestAdapter(requireContext(), viewModel)
         digestAdapter.submitList(
             mutableListOf(
                 NewsModel(
@@ -123,7 +77,51 @@ class MainFragment : Fragment() {
                 )
             )
         )
-        binding.digestRecyclerView.adapter = digestAdapter
+        binding.trendsRecyclerView.adapter = digestAdapter
+        binding.trendsRecyclerView.addItemDecoration(
+            com.example.moretech40android.presentation.fragments.main.trends.DigestItemDecoration(
+                dpToPixel(
+                    requireActivity().resources.getDimension(
+                        R.dimen.margin_recycler_view_vertical
+                    )
+                ),
+                dpToPixel(
+                    requireActivity().resources.getDimension(
+                        R.dimen.margin_recycler_view_no_margin
+                    )
+                )
+            )
+        )
+        trendsAdapter = TrendsAdapter(requireContext())
+        trendsAdapter.submitList(
+            mutableListOf(
+                NewsModel(
+                    "title title title title title title title title title ",
+                    "Sdas",
+                    mutableListOf("1231", "12314", "123124"),
+                    "asdaasdasdas",
+                    "Решение о переносе начала осеннего призыва на военную службу с 1 октября на 1 ноября связано с загрузкой военкоматов, рассказал «РИА Новости» пресс-секретарь президента Дмитрий Песков. Ранее президент Владимир Путин подписал указ об осеннем призыве.\n" +
+                            "\n" +
+                            "«Сейчас военкоматы сильно перегружены в связи с частичной мобилизацией. Чтобы не усугублять эту перегрузку, было принято такое решение. Оно позволит развести потоки мобилизованных и призывников срочников», — сообщил Песков.\n" +
+                            "\n" +
+                            "Указ об осеннем призыве граждан России на военную службу был опубликован в пятницу.\n" +
+                            "Заместитель начальника Главного..."
+                ),
+                NewsModel(
+                    "title1 title1 title1 title1 title1 title1 title1 title1 title1 ",
+                    "Sdas",
+                    mutableListOf("asad", "sadasda", "asdaas"),
+                    "1231412111",
+                    "Решение о переносе начала осеннего призыва на военную службу с 1 октября на 1 ноября связано с загрузкой военкоматов, рассказал «РИА Новости» пресс-секретарь президента Дмитрий Песков. Ранее президент Владимир Путин подписал указ об осеннем призыве.\n" +
+                            "\n" +
+                            "«Сейчас военкоматы сильно перегружены в связи с частичной мобилизацией. Чтобы не усугублять эту перегрузку, было принято такое решение. Оно позволит развести потоки мобилизованных и призывников срочников», — сообщил Песков.\n" +
+                            "\n" +
+                            "Указ об осеннем призыве граждан России на военную службу был опубликован в пятницу.\n" +
+                            "Заместитель начальника Главного..."
+                )
+            )
+        )
+        binding.digestRecyclerView.adapter = trendsAdapter
         binding.digestRecyclerView.addItemDecoration(
             DigestItemDecoration(
                 dpToPixel(

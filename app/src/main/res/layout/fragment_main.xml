@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="26dp"
             android:layout_marginTop="18dp"
-            android:text="@string/digest"
+            android:text="@string/trend"
             android:textColor="@color/dark_blue" />
 
         <com.airbnb.lottie.LottieAnimationView
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="26dp"
             android:layout_marginTop="20dp"
-            android:text="@string/trend"
+            android:text="@string/digest"
             android:textColor="@color/dark_blue" />
 
         <androidx.recyclerview.widget.RecyclerView
