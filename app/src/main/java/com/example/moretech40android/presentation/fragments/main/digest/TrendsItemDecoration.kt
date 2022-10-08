@@ -1,4 +1,4 @@
-package com.example.moretech40android.presentation.fragments.main.trends
+package com.example.moretech40android.presentation.fragments.main.digest
 
 import android.graphics.Rect
 import android.view.View
@@ -16,13 +16,13 @@ class TrendsItemDecoration(
         state: RecyclerView.State
     ) {
         parent.adapter?.let { adapter ->
-            outRect.top = when (parent.getChildAdapterPosition(view)) {
+            outRect.right = when (parent.getChildAdapterPosition(view)) {
                 RecyclerView.NO_POSITION,
                 adapter.itemCount - 1 -> 0
-                else -> spaceSizeVertical.toInt()
+                else -> spaceSizeHorizontal.toInt()
             }
             outRect.left = spaceSizeHorizontal.toInt()
-            outRect.right = spaceSizeHorizontal.toInt()
+            outRect.top = spaceSizeVertical.toInt()
             outRect.bottom = spaceSizeVertical.toInt()
         }
     }

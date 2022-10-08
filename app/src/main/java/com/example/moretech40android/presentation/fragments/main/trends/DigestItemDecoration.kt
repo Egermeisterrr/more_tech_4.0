@@ -1,4 +1,4 @@
-package com.example.moretech40android.presentation.fragments.main.digest
+package com.example.moretech40android.presentation.fragments.main.trends
 
 import android.graphics.Rect
 import android.view.View
@@ -16,13 +16,13 @@ class DigestItemDecoration(
         state: RecyclerView.State
     ) {
         parent.adapter?.let { adapter ->
-            outRect.right = when (parent.getChildAdapterPosition(view)) {
+            outRect.top = when (parent.getChildAdapterPosition(view)) {
                 RecyclerView.NO_POSITION,
                 adapter.itemCount - 1 -> 0
-                else -> spaceSizeHorizontal.toInt()
+                else -> spaceSizeVertical.toInt()
             }
             outRect.left = spaceSizeHorizontal.toInt()
-            outRect.top = spaceSizeVertical.toInt()
+            outRect.right = spaceSizeHorizontal.toInt()
             outRect.bottom = spaceSizeVertical.toInt()
         }
     }
